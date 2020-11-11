@@ -25,7 +25,7 @@
         </p>
         <p style="font-size: medium; margin-left:  0.75in;">
             This was a group project I did for
-            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551" style=" color: blueviolet;">
+            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
                 COMP 551: Applied Machine Learning
             </a>
             at McGill University. We took data about search trends for items related
@@ -35,6 +35,38 @@
             or region. I used the scikit-learn library's implementation of KNN and decision
             trees in order to gain experience with industry level software.
 
+        </p>
+
+        <p style="font-size:  medium;">
+            Softmax classifier
+
+        </p>
+
+        <p style="font-size: medium; margin-left: 0.75in;">
+            This was a group project I did for
+            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
+                COMP 551: Applied Machine Learning
+            </a>
+            at McGill University.
+            I worked in a group setting to implement Softmax regression and then apply it to
+            a wide variety of datasets for classification. My contribution was two-fold. Firstly
+            I implemented the Softmax function itself which provided an interesting mathematical challenge.
+            Secondly, I modified our gradient descent optimizer to use Adagrad optimization as described
+            in this
+            <a href="https://arxiv.org/pdf/1609.04747.pdf">
+                paper
+            </a>
+            <br><br>
+            Designing an implementation of Softmax turned out to be an interesting challenge mathematically
+            becase the Softmax function is a mapping from R^n to R^n and therefore its derivative
+            is represented by a n by n Jacobian matrix with n*n entries, but in order to be compatible
+            with gradient descent, I needed a 1 by n vector, and ultimately was able to determine that
+            the Jacobian diagonal was what I needed, however this with rather non-trivial.
+            <br><br>
+            Implementing Adagrad was much more straightforward and the only problem I had a chance to solve
+            was working with the software engineering decisions my other teammates had made and working
+            with those. Having to do this not only taught me about Adagrad but about communication in
+            a software engineering context as well.
         </p>
 
 
