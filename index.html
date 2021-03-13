@@ -24,7 +24,15 @@
             model to classify bug reports according to priority. I will be doing this for the common
             <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories "> SMT</a> Z3 and CVC4.
             <br> <br>
-            Stay tuned for more developments!
+            After early success scraping bug report data from Github issues and using it to train an RNN to 
+            classify bug reports as high or low priority based on a heurestic classification based on metadata,
+            e.g. bug reports that go unaddressed for 6 months are probably not a priority, I was able to achieve
+            testing accuracies in the 69-75% range, which were higher than those achieved during training!
+            <br><br>
+            My next step is to able to extract insights from the code itself. To accomplish this I will be compiling
+            Z3 and CVC4 with a custom llvm pass that inserts a call to a logging function that runs before every single function
+            call and logs what function was called and with what parameters. My goal here is to then be able to feed these logs 
+            into a neural network to aid in classification by providing more context to the bug report.
         </p>
 
     </div>
