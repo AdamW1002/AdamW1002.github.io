@@ -25,7 +25,7 @@
             <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories "> SMT</a> Z3 and CVC4.
             <br> <br>
             After early success scraping bug report data from Github issues and using it to train an RNN to 
-            classify bug reports as high or low priority based on a heurestic classification based on metadata,
+            classify bug reports as high or low priority based on a heuristic classification based on metadata,
             e.g. bug reports that go unaddressed for 6 months are probably not a priority, I was able to achieve
             testing accuracies in the 69-75% range, which were higher than those achieved during training!
             <br><br>
@@ -33,6 +33,15 @@
             Z3 and CVC4 with a custom llvm pass that inserts a call to a logging function that runs before every single function
             call and logs what function was called and with what parameters. My goal here is to then be able to feed these logs 
             into a neural network to aid in classification by providing more context to the bug report.
+            <br><br>
+            I managed to successfully implement the logging as you can see on my Github. However my current approach has a flaw
+            simply starting z3 and closing it immediately produces a 9000 thousand line long file, and solving a simple SMT instance
+            runs for more than 15 minutes and yields a multi-gigabyte log file. This clearly is untennable for longer programs.
+            As a solution we're looking into smarter logging.
+            <br><br>
+            Many of the things logged aren't terribly likely to be useful such as constructors or minor functions. So the plan from here is to
+            generate a call graph of all plausible calls from a static analysis, next I will traverse the graph with BFS generating a list of calls above a certain depth, 
+            likely 5ish. These will be the only calls I log going forward.
         </p>
 
         <p style="font-size:  medium;">
