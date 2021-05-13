@@ -1,158 +1,169 @@
-<script type="text/javascript" src ="websiteController.js"></script>
+<head>
+    <link rel="stylesheet" href="style.css">
+
+</head>
 
 
+<script type="text/javascript" src="websiteController.js"></script>
 
+
+.module
 
 <title> Adam's website </title>  <!---- > Play spacejam on load for 90s theme <-->
 
 
-<body style="background-color: black; font-family: 'Times New Roman', Times, serif; " onload = "loadingFunction()">
-    <div "title=About" style="color: blue;">
-        <h1 autofocus = "">About me</h1>
+<body onload="loadingFunction()">
+<div
+"title=About" style="color: blue;">
+<h1 autofocus="">About me</h1>
 
-        <p style=" font-size: medium;">
-            I am a U3 (Senior) undergraduate at McGill University in Montreal.
-            I study computer science with a minor in math. My academic and professional
-            interests include Machine Learning and Software Engineering.
-        </p>
-    </div>
+<p style=" font-size: medium;">
+    I am a U3 (Senior) undergraduate studying computer science
+    at McGill University in Montreal. My academic and professional
+    interests include Machine Learning and Software Engineering.
+</p>
+</div>
 
-    <div "title=Research" style="color: blueviolet">
-        <h1>Research</h1>
-
-
-        <p style="font-size:  medium;">
-            Prioritizing SMT Bug reports by Learning from Historical Patches
-        </p>
-
-        <p style="font-size: medium; margin-left: 0.75in;">
-            This winter as part of my Honours Project at McGill, I will be working training a Machine Learning
-            model to classify bug reports according to priority. I will be doing this for the common
-            <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories "> SMT</a> Z3 and CVC4.
-            <br> <br>
-            After early success scraping bug report data from Github issues and using it to train an RNN to 
-            classify bug reports as high or low priority based on a heuristic classification based on metadata,
-            e.g. bug reports that go unaddressed for 6 months are probably not a priority, I was able to achieve
-            testing accuracies in the 69-75% range, which were higher than those achieved during training!
-            <br><br>
-            My next step is to able to extract insights from the code itself. To accomplish this I will be compiling
-            Z3 and CVC4 with a custom llvm pass that inserts a call to a logging function that runs before every single function
-            call and logs what function was called and with what parameters. My goal here is to then be able to feed these logs 
-            into a neural network to aid in classification by providing more context to the bug report.
-            <br><br>
-            I managed to successfully implement the logging as you can see on my Github. However my current approach has a flaw
-            simply starting z3 and closing it immediately produces a 9000 thousand line long file, and solving a simple SMT instance
-            runs for more than 15 minutes and yields a multi-gigabyte log file. This clearly is untennable for longer programs.
-            As a solution we're looking into smarter logging.
-            <br><br>
-            Many of the things logged aren't terribly likely to be useful such as constructors or minor functions. So the plan from here is to
-            generate a call graph of all plausible calls from a static analysis, next I will traverse the graph with BFS generating a list of calls above a certain depth, 
-            likely 5ish. These will be the only calls I log going forward.
-            <br><br>
-            The project is now done! You can see the full report and presentation here: 
-            <a href="/AdamW1002.github.io/COMP_400_Report (1).pdf"> Report</a> and
-            <a href="/AdamW1002.github.io/Comp 400.pptx"> Presentation</a>
-        </p>
-
-        <p style="font-size:  medium;">
-            Summer 2021
-        </p>
-
-        <p style="font-size: medium; margin-left: 0.75in;">
-           This summer I will be working in Dr. Ronghui Gu's lab at Columbia University on extending his work in Machine Learning and formal methods.
-        </p>
-    </div>
+<div
+"title=Research" style="color: blueviolet">
+<h1>Research</h1>
 
 
+<p style="font-size:  medium;">
+    Prioritizing SMT Bug reports by Learning from Historical Patches
+</p>
 
-    <div "title=Projects" style="color:darkred;">
-        <h1>Projects</h1>
+<p style="font-size: medium; margin-left: 0.75in;">
+    This winter as part of my Honours Project at McGill, I will be working training a Machine Learning
+    model to classify bug reports according to priority. I will be doing this for the common
+    <a href="https://en.wikipedia.org/wiki/Satisfiability_modulo_theories "> SMT</a> Z3 and CVC4.
+    <br> <br>
+    After early success scraping bug report data from Github issues and using it to train an RNN to
+    classify bug reports as high or low priority based on a heuristic classification based on metadata,
+    e.g. bug reports that go unaddressed for 6 months are probably not a priority, I was able to achieve
+    testing accuracies in the 69-75% range, which were higher than those achieved during training!
+    <br><br>
+    My next step is to able to extract insights from the code itself. To accomplish this I will be compiling
+    Z3 and CVC4 with a custom llvm pass that inserts a call to a logging function that runs before every single function
+    call and logs what function was called and with what parameters. My goal here is to then be able to feed these logs
+    into a neural network to aid in classification by providing more context to the bug report.
+    <br><br>
+    I managed to successfully implement the logging as you can see on my Github. However my current approach has a flaw
+    simply starting z3 and closing it immediately produces a 9000 thousand line long file, and solving a simple SMT
+    instance
+    runs for more than 15 minutes and yields a multi-gigabyte log file. This clearly is untennable for longer programs.
+    As a solution we're looking into smarter logging.
+    <br><br>
+    Many of the things logged aren't terribly likely to be useful such as constructors or minor functions. So the plan
+    from here is to
+    generate a call graph of all plausible calls from a static analysis, next I will traverse the graph with BFS
+    generating a list of calls above a certain depth,
+    likely 5ish. These will be the only calls I log going forward.
+    <br><br>
+    The project is now done! You can see the full report and presentation here:
+    <a href="/AdamW1002.github.io/COMP_400_Report (1).pdf"> Report</a> and
+    <a href="/AdamW1002.github.io/Comp 400.pptx"> Presentation</a>
+</p>
 
+<p style="font-size:  medium;">
+    Summer 2021
+</p>
 
-
-        <p style="font-size: medium;">
-            <a href="https://github.com/AdamW1002/AdamW1002.github.io ">
-                This website's source code
-            </a>
-        </p>
-
-        <p style="font-size:  medium;">
-            Image recognition
-
-        </p>
-
-        <p style="font-size: medium; margin-left: 0.75in;">
-            This was a group project I did for
-            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
-                COMP 551: Applied Machine Learning
-            </a>
-            at McGill University. <br><br>
-            <b>The problem</b>: Given an image containing up to 5 MNIST digits, recognize the order they're in
-            and any blanks. For example, if the image contained "123" the correct output would be "1231010"
-            where "10" symbolizes a blank space.<br><br>
-            <b>The issues:</b> Training a neural network directly to do this impractical due to the multitude
-            of possible outputs. To address this I employed an image segmentation system using scikit-learn.
-            I wrote code to break the image into the digits that comprise it so that they can be individually
-            recognized.
-
-
-        </p>
-
-        <p style="font-size: medium;">
-            COVID analytics
-        </p>
-        <p style="font-size: medium; margin-left:  0.75in;">
-            This was a group project I did for
-            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
-                COMP 551: Applied Machine Learning
-            </a>
-            at McGill University. We took data about search trends for items related
-            to COVID-19 that were organized by time and region and analyzed them. In this project
-            my contribution was to implement and run the machine learning experiments, and
-            then perform validation by either testing the model on data from a different time
-            or region. I used the scikit-learn library's implementation of KNN and decision
-            trees in order to gain experience with industry level software.
-
-        </p>
-
-        <p style="font-size:  medium;">
-            Softmax classifier
-
-        </p>
-
-        <p style="font-size: medium; margin-left: 0.75in;">
-            This was a group project I did for
-            <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
-                COMP 551: Applied Machine Learning
-            </a>
-            at McGill University.
-            I worked in a group setting to implement Softmax regression and then apply it to
-            a wide variety of datasets for classification. My contribution was two-fold. Firstly
-            I implemented the Softmax function itself which provided an interesting mathematical challenge.
-            Secondly, I modified our gradient descent optimizer to use the Adagrad algorithm as described
-            by this
-            <a href="https://arxiv.org/pdf/1609.04747.pdf">
-                paper
-            </a>
-
-        </p>
+<p style="font-size: medium; margin-left: 0.75in;">
+    This summer I will be working in Dr. Ronghui Gu's lab at Columbia University on extending his work in Machine
+    Learning and formal methods.
+</p>
+</div>
 
 
+<div
+"title=Projects" style="color:darkred;">
+<h1>Projects</h1>
 
 
-    </div>
+<p style="font-size: medium;">
+    <a href="https://github.com/AdamW1002/AdamW1002.github.io ">
+        This website's source code
+    </a>
+</p>
+
+<p style="font-size:  medium;">
+    Image recognition
+
+</p>
+
+<p style="font-size: medium; margin-left: 0.75in;">
+    This was a group project I did for
+    <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
+        COMP 551: Applied Machine Learning
+    </a>
+    at McGill University. <br><br>
+    <b>The problem</b>: Given an image containing up to 5 MNIST digits, recognize the order they're in
+    and any blanks. For example, if the image contained "123" the correct output would be "1231010"
+    where "10" symbolizes a blank space.<br><br>
+    <b>The issues:</b> Training a neural network directly to do this impractical due to the multitude
+    of possible outputs. To address this I employed an image segmentation system using scikit-learn.
+    I wrote code to break the image into the digits that comprise it so that they can be individually
+    recognized.
 
 
+</p>
 
-    <div "title= Contact" style="color:orangered;">
-        <h1>Contact</h1>
-        <p style="font-size: medium;">
-            <a href="https://github.com/AdamW1002" style="color: currentColor"> Github</a>
-        </p>
-        <p style="font-size: medium;">
-            <a href="/AdamW1002.github.io/Adam's Resume SE.pdf" style="color: currentColor;">Resume</a>
-        </p>
+<p style="font-size: medium;">
+    COVID analytics
+</p>
+<p style="font-size: medium; margin-left:  0.75in;">
+    This was a group project I did for
+    <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
+        COMP 551: Applied Machine Learning
+    </a>
+    at McGill University. We took data about search trends for items related
+    to COVID-19 that were organized by time and region and analyzed them. In this project
+    my contribution was to implement and run the machine learning experiments, and
+    then perform validation by either testing the model on data from a different time
+    or region. I used the scikit-learn library's implementation of KNN and decision
+    trees in order to gain experience with industry level software.
 
-    </div>
+</p>
+
+<p style="font-size:  medium;">
+    Softmax classifier
+
+</p>
+
+<p style="font-size: medium; margin-left: 0.75in;">
+    This was a group project I did for
+    <a href="https://www.mcgill.ca/study/2020-2021/courses/comp-551">
+        COMP 551: Applied Machine Learning
+    </a>
+    at McGill University.
+    I worked in a group setting to implement Softmax regression and then apply it to
+    a wide variety of datasets for classification. My contribution was two-fold. Firstly
+    I implemented the Softmax function itself which provided an interesting mathematical challenge.
+    Secondly, I modified our gradient descent optimizer to use the Adagrad algorithm as described
+    by this
+    <a href="https://arxiv.org/pdf/1609.04747.pdf">
+        paper
+    </a>
+
+</p>
+
+
+</div>
+
+
+<div
+"title= Contact" style="color:orangered;">
+<h1>Contact</h1>
+<p style="font-size: medium;">
+    <a href="https://github.com/AdamW1002" style="color: currentColor"> Github</a>
+</p>
+<p style="font-size: medium;">
+    <a href="/AdamW1002.github.io/Adam's Resume SE.pdf" style="color: currentColor;">Resume</a>
+</p>
+
+</div>
 
 </body>
+
+</html>
