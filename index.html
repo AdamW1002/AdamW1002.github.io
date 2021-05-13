@@ -1,23 +1,21 @@
 <title> Adam's website </title>  <!---- > Play spacejam on load for 90s theme <-->
-<!--<embed src="space_jam.mp3" autostart="true" loop="true"
-width="2" height="0">
-</embed> <-->
+
 <script language="javascript">
-function script() {
+function loadingFunction() {
     var songs = ["space_jam.mp3", "macarena.mp3", "ice.mp3"];
 
-    //alert(Math.random() * songs.length);
+
     var song = Math.floor(Math.random() * songs.length);
-    //alert(song);
-var audio = new Audio(songs[song]);
-audio.play();
+
+    var audio = new Audio(songs[song]);
+    audio.play();
 
 
 }
 
 </script>
 
-<body style="background-color: black; font-family: 'Times New Roman', Times, serif; " onload = "script()">
+<body style="background-color: black; font-family: 'Times New Roman', Times, serif; " onload = "loadingFunction()">
     <div "title=About" style="color: blue;">
         <h1>About me</h1>
 
@@ -66,12 +64,11 @@ audio.play();
         </p>
 
         <p style="font-size:  medium;">
-            Code2Inv / Summer 2021
+            Summer 2021
         </p>
 
         <p style="font-size: medium; margin-left: 0.75in;">
-           This summer I will be working in Dr. Ronghui Gu's lab at Columbia University on extending his work with Code2Inv.
-           This project will be about designing neural networks to learn loop invariants to assist in program variation.
+           This summer I will be working in Dr. Ronghui Gu's lab at Columbia University on extending his work in Machine Learning and formal methods.
         </p>
     </div>
 
