@@ -4,8 +4,10 @@ width="2" height="0">
 </embed> <-->
 <script language="javascript">
 function script() {
- var songs = ["space_jam.mp3", "macarena.mp3"]
-var audio = new Audio(songs[Math.floor(Math.random * songs.length)]);
+    var songs = ["space_jam.mp3", "macarena.mp3", "ice.mp3"]
+    var song = Math.floor(Math.random * songs.length);
+    alert(song);
+var audio = new Audio(songs[song]);
 audio.play();
 
 
