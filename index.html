@@ -5,7 +5,7 @@ width="2" height="0">
 <script language="javascript">
 function script() {
  var songs = ["space_jam.mp3", "macarena.mp3"]
-var audio = new Audio(songs[1]);
+var audio = new Audio(songs[Math.floor(Math.random * songs.length)]);
 audio.play();
 
 
