@@ -1,7 +1,7 @@
 
 body {
-    cursor:  url(clippy.png), crosshair;
-    background-color: #000000;
+    cursor:  url(clippy.png);
+    background-color: black;
     font-family: 'Times New Roman', Times, serif;
 
 }
